@@ -2621,6 +2621,7 @@ details[open] .modal-overlay::after {
   position: relative;
 }
 
+
 .search-modal__content-bottom {
   bottom: calc((var(--inputs-margin-offset) / 2));
 }
@@ -2949,6 +2950,7 @@ details-disclosure > details {
   border-radius: var(--media-radius);
   overflow: visible !important;
   background-color: rgb(var(--color-background));
+  
 }
 
 .global-media-settings:after {
