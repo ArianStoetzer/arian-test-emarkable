@@ -1,0 +1,195 @@
+.hero-bg {
+    background: linear-gradient(to right, #102E32, #095660);
+    color: white;
+    padding: 10px 0 250px 0;
+    width: 100%;
+    margin: 0 auto -180px auto;
+}
+
+.hero-text-wrapper {
+    max-width: 1300px;
+    /* background-color: hotpink; */
+    margin: 180px auto 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 72px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-weight: 100;
+}
+
+.hero-collections {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+  
+.hero-section h1 {
+    color: white;
+}
+
+.hero-collection {
+    position: relative;
+    text-align: center;
+    flex-basis: 1;
+    width: 100%;
+    height: 271px;
+    box-shadow: -3px 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.hero-collection img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: unset;
+    display: block;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.hero-collection-title {
+    position: absolute;
+    bottom: 12px;
+    left: 0%;
+    color: #102E32;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    background-color: white;
+    padding: 12px 30px 6px 15px;
+    border-radius: 0 7px 7px 0;
+}
+
+.hero-collection-title p {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+    color: #102E32;
+}
+
+.hero-collection-title .eerste-woord {
+    font-size: 16px;
+    font-style: italic;
+    color: #89ADA8;
+    margin-bottom: -15px;
+}
+
+
+
+
+.small-collections {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+}
+
+.hero-small-collection {
+    width: 100%;
+    min-width: 290px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 7px;
+    background-color: #FFF;
+    border: 1px solid #E6E9EA;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100%;
+
+}
+
+.hero-small-collection-title p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #102E32;
+}
+
+.hero-small-collection-title .eerste-woord {
+    font-size: 14px;
+    font-style: italic;
+    color: #DB6E31;
+    margin-bottom: -12px;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+
+    .hero-bg { 
+        margin-bottom: -270px;
+        padding: 10px 0 300px 0;
+    }
+
+    .hero-collections {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .hero-collection {
+        height: 93px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: start;
+    }
+
+    .hero-collection img {
+        width: 110px;
+        height: 100%;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .hero-collection-title {
+        flex: 1;
+        position: static;
+        border-radius: 0 5px 5px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left:  20px;
+    }
+
+    .hero-collection-title .eerste-woord {
+        font-size: 14px;
+        margin-bottom: -10px;
+    }
+
+    .hero-collection-title p {
+        font-size: 20px;
+    }
+
+}

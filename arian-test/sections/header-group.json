@@ -1,1 +1,63 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"text":"Welcome to our store","link":""}}},"block_order":["announcement-bar-0"],"settings":{}},"header":{"type":"header","settings":{"logo_position":"middle-left","menu":"main-menu","menu_type_desktop":"dropdown","sticky_header_type":"on-scroll-up","show_line_separator":true,"color_scheme":"scheme-1","enable_country_selector":true,"enable_language_selector":true,"mobile_logo_position":"center","margin_bottom":0,"padding_top":20,"padding_bottom":20}}},"order":["announcement-bar","header"]}
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "hero_LmQtbh": {
+      "type": "hero",
+      "settings": {
+        "title": "Stel jouw eigen staalproduct samen",
+        "text": "Welkom bij jouw one-stop-shop voor alles wat met staal te maken heeft! Ben jij een fan van stalen producten op maat en klaar om je volgende thuisproject te laten shinen?",
+        "collection1": "industrieel-wonen",
+        "collection2": "moderne-trapleuningen",
+        "collection3": "maatwerk-buitenshuis"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "hero_LmQtbh"
+  ]
+}
