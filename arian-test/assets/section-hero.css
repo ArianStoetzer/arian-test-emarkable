@@ -1,13 +1,13 @@
 .hero-bg {
     background: linear-gradient(to right, #102E32, #095660);
     color: white;
-    padding: 10px 0 250px 0;
+    padding: 10px 0 220px 0;
     width: 100%;
-    margin: 0 auto -180px auto;
+    margin: 0 auto -160px auto;
 }
 
 .hero-text-wrapper {
-    max-width: 1300px;
+    max-width: 1320px;
     /* background-color: hotpink; */
     margin: 180px auto 0 auto;
     padding-left: 20px;
@@ -39,7 +39,7 @@
     flex-direction: row;
     gap: 30px;
     justify-content: space-between;
-    max-width: 1300px;
+    max-width: 1320px;
     margin: 0 auto;
     margin-bottom: 30px;
     padding-left: 20px;
@@ -93,7 +93,7 @@ a.hero-collection:hover img {
     font-weight: bold;
     text-align: left;
     background-color: white;
-    padding: 12px 30px 6px 15px;
+    padding: 12px 30px 4px 17px;
     border-radius: 0 7px 7px 0;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
@@ -109,7 +109,7 @@ a.hero-collection:hover img {
     font-size: 16px;
     font-style: italic;
     color: #89ADA8;
-    margin-bottom: -15px;
+    margin-bottom: -17px;
 }
 
 .small-collections {
@@ -117,7 +117,7 @@ a.hero-collection:hover img {
     flex-direction: row;
     gap: 30px;
     justify-content: space-between;
-    max-width: 1300px;
+    max-width: 1320px;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -163,15 +163,37 @@ a.hero-small-collection-anchor:hover {
     font-size: 14px;
     font-style: italic;
     color: #DB6E31;
-    margin-bottom: -12px;
+    margin-bottom: -14px;
 }
-
-
 
 @media (max-width: 992px) {
 
+    .hero-text h1 {
+        font-size: 45px;
+        line-height: 58px;
+    }
+
+    .hero-collection-title .eerste-woord {
+        font-size: 14px;
+        margin-bottom: -10px;
+    }
+
+    .hero-collection-title p {
+        font-size: 20px;
+    }
+    
+}
+
+
+@media (max-width: 768px) {
+
     .hero-text-wrapper {
         margin-top: 110px;
+    }
+
+    .hero-bg { 
+        margin-bottom: -270px;
+        padding: 10px 0 300px 0;
     }
 
     .hero-text h1 {
@@ -181,13 +203,9 @@ a.hero-small-collection-anchor:hover {
 
     .hero-text p {
         font-size: 14px;
-        line-height: 25px;
+        line-height: 25px;       
     }
 
-    .hero-bg { 
-        margin-bottom: -270px;
-        padding: 10px 0 300px 0;
-    }
 
     .hero-collections {
         flex-direction: column;
@@ -220,13 +238,16 @@ a.hero-small-collection-anchor:hover {
         padding-left:  20px;
     }
 
-    .hero-collection-title .eerste-woord {
-        font-size: 14px;
-        margin-bottom: -10px;
+    .small-collections {
+        gap: 10px;
     }
 
-    .hero-collection-title p {
-        font-size: 20px;
+    a.hero-small-collection-anchor {
+        min-width: 250px;
+    }
+
+    .hero-small-collection-title p {
+        font-size: 16px;
     }
 
     .hero-small-collection-title .eerste-woord {

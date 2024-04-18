@@ -63,7 +63,7 @@
     <div class="hero-text-wrapper">
         <div class="hero-text">
 
-            
+            {% comment %} init vars om de titeltekst te splitsen {% endcomment %}
             {% assign title_word_array = section.settings.title | split: ' ' %}
             {% assign first_part = "" %}
             {% assign highlighted_part = "" %}
@@ -91,8 +91,14 @@
                 {% endif %}
             {% endfor %}
 
-            {% if first_part and highlighted_part and last_part %}
+            {% comment %} Het te highlighten woord krijgt een andere span + class {% endcomment %}
+            {% if highlighted_part %}
+               {% if first_part or last_part %}
+                {% assign last_part = last_part | rstrip %}
                 <h1>{{ first_part }}<span class="highlighted">{{ highlighted_part }}</span> {{ last_part }}</h1>
+                {% else %}
+                  <h1>{{ section.settings.title }}</h1>
+               {% endif %}
             {% else %}
                 <h1>{{ section.settings.title }}</h1>
             {% endif %}
@@ -110,6 +116,8 @@
             {% assign image = collection.image %}
             <img src="{{ image | image_url: width: 600 }}" alt="{{ collection.title }}" width="600" height="600">
             <div class="hero-collection-title">
+
+              {% comment %} In de titel splits ik het eerste woord af om die een andere class te geven {% endcomment %}
                 {% assign words = collection.title | split: ' ' %}
                 {% if words.size > 0 %}
                     <p class ="eerste-woord">{{ words.first }}</p>
@@ -132,6 +140,8 @@
             <a url="#" class="hero-small-collection-anchor">
             <div class="hero-small-collection" style="background-image: url('{{ collection.image | image_url: width: 400 }}');">
                 <div class="hero-small-collection-title">
+                  
+                  {% comment %} In de titel splits ik het eerste woord af om die een andere class te geven {% endcomment %}
                     {% assign words = collection.title | split: ' ' %}
                     {% if words.size > 0 %}
                         <p class ="eerste-woord">{{ words.first }}</p>
