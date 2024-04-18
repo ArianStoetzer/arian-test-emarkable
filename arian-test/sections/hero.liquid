@@ -32,28 +32,22 @@
     {
         "type": "collection",
         "id": "collection4",
-        "label": "Collection 4"
+        "label": "(Row 2) Collection 4"
     },
     {
         "type": "collection",
         "id": "collection5",
-        "label": "Collection 5"
+        "label": "(Row 2) Collection 5"
     },
     {
         "type": "collection",
         "id": "collection6",
-        "label": "Collection 6"
+        "label": "(Row 2) Collection 6"
     },
     {
         "type": "collection",
         "id": "collection7",
-        "label": "Collection 7"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Hero",
-      "category": "Custom"
+        "label": "(Row 2) Collection 7"
     }
   ]
 }
@@ -68,7 +62,40 @@
   <div class="hero-bg">
     <div class="hero-text-wrapper">
         <div class="hero-text">
-            <h1>{{ section.settings.title }}</h1>
+
+            
+            {% assign title_word_array = section.settings.title | split: ' ' %}
+            {% assign first_part = "" %}
+            {% assign highlighted_part = "" %}
+            {% assign last_part = "" %}
+            {% assign biggest_word_count = 0 %}
+            
+            {% comment %} Ik zoek het langste woord, wat gehighlight moet worden {% endcomment %}
+            {% for title_word in title_word_array %}             
+                {% if title_word.size > biggest_word_count %} 
+                    {% assign highlighted_part = title_word %}
+                    {% assign biggest_word_count = title_word.size %}
+                {% endif %}
+            {% endfor %}
+
+            {% comment %} ik maak de strings klaar die vooraan en achteraan het gehighlighte woord moeten komen {% endcomment %}
+            {% assign found_highlighted = false %}
+            {% for title_word in title_word_array %}
+                {% if found_highlighted == true %}
+                    {% assign last_part = last_part | append: title_word | append: ' ' %}
+                {% elsif title_word == highlighted_part %}
+                    {% assign found_highlighted = true %}
+                    {% continue %}
+                {% else %}
+                    {% assign first_part = first_part | append: title_word | append: ' '  %} 
+                {% endif %}
+            {% endfor %}
+
+            {% if first_part and highlighted_part and last_part %}
+                <h1>{{ first_part }}<span class="highlighted">{{ highlighted_part }}</span> {{ last_part }}</h1>
+            {% else %}
+                <h1>{{ section.settings.title }}</h1>
+            {% endif %}
             <p>{{ section.settings.text }}</p>
         </div>
     </div>
@@ -78,20 +105,22 @@
     {% assign collection_key = 'collection' | append: i %}
     {% assign collection = section.settings[collection_key] %}
     {% if collection %}
-      <div class="hero-collection">
-        {% assign image = collection.image %}
-        <img src="{{ image | image_url: width: 600 }}" alt="{{ collection.title }}" width="600" height="600">
-        <div class="hero-collection-title">
-            {% assign words = collection.title | split: ' ' %}
-            {% if words.size > 0 %}
-                <p class ="eerste-woord">{{ words.first }}</p>
-            {% assign rest_of_title = words | slice: 1, words.size | join: ' ' %}
-                <p>{{ rest_of_title }}</p>
-            {% else %}
-                <p>{{ collection.title }}</p>
-            {% endif %}
+      <a url="#" class="hero-collection">
+        <div class="hero-collection">
+            {% assign image = collection.image %}
+            <img src="{{ image | image_url: width: 600 }}" alt="{{ collection.title }}" width="600" height="600">
+            <div class="hero-collection-title">
+                {% assign words = collection.title | split: ' ' %}
+                {% if words.size > 0 %}
+                    <p class ="eerste-woord">{{ words.first }}</p>
+                {% assign rest_of_title = words | slice: 1, words.size | join: ' ' %}
+                    <p>{{ rest_of_title }}</p>
+                {% else %}
+                    <p>{{ collection.title }}</p>
+                {% endif %}
+            </div>
         </div>
-      </div>
+      </a>
     {% endif %}
   {% endfor %}
   </div>
@@ -100,6 +129,7 @@
         {% assign collection_key = 'collection' | append: i %}
         {% assign collection = section.settings[collection_key] %}
         {% if collection %}
+            <a url="#" class="hero-small-collection-anchor">
             <div class="hero-small-collection" style="background-image: url('{{ collection.image | image_url: width: 400 }}');">
                 <div class="hero-small-collection-title">
                     {% assign words = collection.title | split: ' ' %}
@@ -112,6 +142,7 @@
                     {% endif %}
                 </div>
               </div>
+            </a>
         {% endif %}
     {% endfor %}
   </div>

@@ -26,6 +26,10 @@
     margin-bottom: 10px;
 }
 
+.hero-text h1 .highlighted {
+    color: #89ADA8
+}
+
 .hero-text p {
     font-weight: 100;
 }
@@ -46,13 +50,23 @@
     color: white;
 }
 
-.hero-collection {
+a.hero-collection {
     position: relative;
     text-align: center;
     flex-basis: 1;
     width: 100%;
     height: 271px;
     box-shadow: -3px 0 6px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.hero-collection {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .hero-collection img {
@@ -62,6 +76,12 @@
     display: block;
     object-fit: cover;
     border-radius: 7px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+a.hero-collection:hover img {
+    transform: scale(1.1);
 }
 
 .hero-collection-title {
@@ -75,6 +95,7 @@
     background-color: white;
     padding: 12px 30px 6px 15px;
     border-radius: 0 7px 7px 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .hero-collection-title p {
@@ -91,9 +112,6 @@
     margin-bottom: -15px;
 }
 
-
-
-
 .small-collections {
     display: flex;
     flex-direction: row;
@@ -107,10 +125,18 @@
     padding-bottom: 12px;
 }
 
-.hero-small-collection {
+a.hero-small-collection-anchor {
     width: 100%;
     min-width: 290px;
     height: 76px;
+    padding: 0;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+.hero-small-collection {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     padding-left: 20px;
@@ -120,7 +146,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100%;
+}
 
+a.hero-small-collection-anchor:hover {
+    transform: translate(0, 3px);
 }
 
 .hero-small-collection-title p {
@@ -139,13 +168,21 @@
 
 
 
-
-
-
-
-
-
 @media (max-width: 992px) {
+
+    .hero-text-wrapper {
+        margin-top: 110px;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+        line-height: 43px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+        line-height: 25px;
+    }
 
     .hero-bg { 
         margin-bottom: -270px;
@@ -192,4 +229,11 @@
         font-size: 20px;
     }
 
+    .hero-small-collection-title .eerste-woord {
+        display: none;
+    }
+
+    a.hero-collection {
+        height: unset;
+    }
 }
